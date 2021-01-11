@@ -11,7 +11,7 @@ def parse_line(ln):
     return customer_id, amount
 
 
-lines = sc.textFile('./data/myFile0.csv')
+lines = sc.textFile('../data/myFile0.csv')
 parsed_lines = lines.map(parse_line)
 customers = parsed_lines.reduceByKey(lambda x, y: x + y).map(lambda x_y: (x_y[1], x_y[0])).sortByKey()
 results = customers.collect()

@@ -3,7 +3,7 @@ from pyspark import SparkConf, SparkContext
 conf = SparkConf().setMaster('local').setAppName('RatingHistogram')
 sc = SparkContext(conf=conf)
 
-input = sc.textFile('./data/Book')
+input = sc.textFile('../data/Book')
 words = input.flatMap(lambda x: x.split())
 words_counts = words.countByValue()
 

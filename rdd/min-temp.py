@@ -13,7 +13,7 @@ def parse_line(ln):
 
 
 def parse_lines():
-    lines = sc.textFile('./data/1800.csv')
+    lines = sc.textFile('../data/1800.csv')
     parsed_lines = lines.map(parse_line)
     return parsed_lines
 

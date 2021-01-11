@@ -9,7 +9,7 @@ def normalize(text):
     return re.compile(r'\W+', re.UNICODE).split(text.lower())
 
 
-input = sc.textFile('./data/Book')
+input = sc.textFile('../data/Book')
 words = input.flatMap(normalize)
 # this a hard way to make count of value
 # convert each value into key/value pair with a value of 1
